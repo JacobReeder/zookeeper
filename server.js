@@ -24,7 +24,10 @@ app.listen(PORT, () => {
 
 app.get('/api/animals/:id', (req, res) => {
     const result = findById(req.params.id, animals);
+    if (result) {
+    } else {
     res.json(result);
+    }
 });
 
 function filterByQuery(query, animalsArray) {
